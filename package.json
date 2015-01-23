@@ -1,0 +1,32 @@
+{
+  "name": "mzuka-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha --harmony-generators --compilers ls:LiveScript test/middleware/index.ls"
+  },
+  "author": "kharhys <kelgitonga@gmail.com> (https://github.com/kharhys)",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.1",
+    "body-parser": "^1.10.2",
+    "co": "^4.1.0",
+    "co-bcrypt": "^1.0.0",
+    "koa": "^0.15.0",
+    "koa-better-body": "^1.0.16",
+    "koa-jwt": "^0.1.7",
+    "koa-logger": "^1.2.2",
+    "koa-router": "^3.8.0",
+    "lodash": "^2.4.1",
+    "reheat": "^1.0.0-beta.10",
+    "supertest": "^0.15.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "co-mocha": "^1.1.0",
+    "co-supertest": "0.0.7",
+    "faker": "^2.1.2",
+    "mocha": "^2.1.0"
+  }
+}
