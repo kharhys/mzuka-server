@@ -6,10 +6,11 @@
   "scripts": {
     "capp": "lsc app.ls -cbo deploy",
     "commit": "git add . && git commit -m '&yet'",
-    "cmod": "lsc models/* -cbo deploy/models --nodejs --harmony",
-    "cmid": "lsc middleware/* -cbo deploy/middleware --nodejs --harmony",
-    "compile": "npm run capp && npm run cmod && npm run cmid",
     "test": "npm run compile && node --harmony deploy/app",
+    "compile": "npm run capp && npm run cmod && npm run cmid",
+    "cmod": "lsc models/* -cbo deploy/models --nodejs --harmony",
+    "start": "pm2 start app.js --node-args='--harmony' && pm2 info app",
+    "cmid": "lsc middleware/* -cbo deploy/middleware --nodejs --harmony",
     "deploy": "cp package.json deploy && cd deploy && npm run commit && git push"
   },
   "author": "kharhys <kelgitonga@gmail.com> (https://github.com/kharhys)",
