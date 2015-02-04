@@ -7,15 +7,15 @@ reheat = require('reheat');
 bcrypt = require('co-bcrypt');
 module.exports = function*(next){
   var name, password, users, user, profile, secret, token;
-  name = this.request.body.fields.name;
+  name = this.request.body.fields.username;
   password = this.request.body.fields.password;
   users = yield reheat.getModel('user').collection.findAll({
     where: {
-      user_name: name
+      username: name
     }
   });
   user = users.find(function(usr){
-    return name === usr.get('user_name');
+    return name === usr.get('username');
   });
   if (user) {
     if (yield bcrypt.compare(password, user.get('password'))) {
