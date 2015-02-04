@@ -75,7 +75,6 @@ module.exports = formview.extend({
 var model;
 model = require('ampersand-model');
 module.exports = model.extend({
-  urlRoot: 'http://localhost:3000/register',
   props: {
     email: ['string', true, ''],
     password: ['string', true, ''],
