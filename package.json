@@ -4,25 +4,40 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "lsc middleware/* -cbo test/middleware --nodejs --harmony",
-    "test": "NODE_ENV=test mocha --harmony-generators --compilers ls:LiveScript test/middleware/index.ls"
+    "capp": "lsc app.ls -cbo deploy",
+    "commit": "git add . && git commit -m '&yet'",
+    "cmod": "lsc models/* -cbo deploy/models --nodejs --harmony",
+    "cmid": "lsc middleware/* -cbo deploy/middleware --nodejs --harmony",
+    "compile": "npm run capp && npm run cmod && npm run cmid",
+    "test": "npm run compile && node --harmony deploy/app",
+    "deploy": "cp package.json deploy && cd deploy && npm run commit && git push"
   },
   "author": "kharhys <kelgitonga@gmail.com> (https://github.com/kharhys)",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^0.8.1",
+    "bluebird": "^2.9.1",
     "co": "^4.1.0",
     "co-bcrypt": "^1.0.0",
     "co-body": "^1.0.0",
+    "joi": "^5.1.0",
     "koa": "^0.15.0",
     "koa-better-body": "^1.0.16",
+    "koa-cors": "0.0.14",
     "koa-json": "^1.1.1",
     "koa-jwt": "^0.1.7",
     "koa-logger": "^1.2.2",
     "koa-router": "^3.8.0",
+    "koa-static": "^1.4.9",
     "lodash": "^2.4.1",
+    "marko": "^1.3.27",
     "mz": "^1.2.1",
-    "reheat": "^1.0.0-beta.10"
+    "oauth-signature": "^1.3.0",
+    "pesapaljs": "0.0.3-a",
+    "reheat": "^1.0.0-beta.10",
+    "superagent": "^0.21.0",
+    "superagent-bluebird-promise": "^0.6.0",
+    "xmlbuilder": "^2.4.5"
   },
   "devDependencies": {
     "chai": "^1.10.0",
@@ -30,6 +45,7 @@
     "co-supertest": "0.0.7",
     "faker": "^2.1.2",
     "mocha": "^2.1.0",
+    "offline-docs": "^1.0.4",
     "supertest": "^0.15.0"
   }
 }
