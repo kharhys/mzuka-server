@@ -12,7 +12,7 @@
     "stage": "pm2 kill && git pull && npm install && npm run start",
     "start": "pm2 start app.js --node-args='--harmony' && pm2 info app",
     "cmid": "lsc middleware/* -cbo deploy/middleware --nodejs --harmony",
-    "deploy": "cp package.json deploy && cd deploy && npm run commit && git push"
+    "deploy": "cp package.json deploy && npm run compile && cd deploy && npm run commit && git push"
   },
   "author": "kharhys <kelgitonga@gmail.com> (https://github.com/kharhys)",
   "license": "ISC",

@@ -18,7 +18,7 @@ app.use(log());
 app.use(json());
 app.use(serve(__dirname + '/public'));
 app.use(routed(app));
-app.get('/videos', videos).post('/register', parsed(), registrar).post('/authenticate', parsed(), authenticator).post('/upload', parsed({
+app.get('/videos', videos).get('/form', index).post('/register', parsed(), registrar).post('/authenticate', parsed(), authenticator).post('/upload', parsed({
   multipart: true
 }), uploader);
 app.listen(3000);
