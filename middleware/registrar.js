@@ -3,6 +3,7 @@ var model;
 model = require('../models/user');
 module.exports = function*(next){
   var user;
+  console.log(this.request.body);
   user = new model(this.request.body.fields);
   this.body = yield user.save();
 };
