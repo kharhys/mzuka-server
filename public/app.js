@@ -12026,7 +12026,7 @@ module.exports = function(arr, fn, initial){
 
     // includes/video.jade compiled template
     templatizer["includes"]["video"] = function tmpl_includes_video() {
-        return '<li class="list-item"><div class="grid-flex-container"><div class="grid-flex-cell grid-flex-cell1of4"><figure class="media-outlined"><img data-hook="avatar"/><figcaption></figcaption></figure></div><div class="grid-flex-cell"><ul><li><a data-hook="title"></a></li><li><blockquote><p data-hook="artist"></p></blockquote></li><li><p>button collection</p></li></ul></div></div></li>';
+        return '<li class="list-item"><div class="flex flex-stretch"><figure class="media-outlined"><img data-hook="avatar"/><figcaption></figcaption></figure><div class="flex flex-auto list-item-details"><div class="flex flex-column"><div><dl class="no-margin"><dt data-hook="title"></dt><dd data-hook="artist"></dd></dl></div><div class="flex"><a class="button button-outlined"><i class="fa fa-download"></i></a><a class="button button-outlined"><i class="fa fa-play"></i></a><a class="button button-outlined"><i class="fa fa-bars"></i></a></div></div></div></div></li>';
     };
 
     // pages/home.jade compiled template
@@ -12051,12 +12051,12 @@ module.exports = function(arr, fn, initial){
 
     // pages/videos.jade compiled template
     templatizer["pages"]["videos"] = function tmpl_pages_videos() {
-        return '<div class="grid-flex-container port"><div class="grid-flex-cell"><nav role="navigation"><ul class="list-unstyled list-inline tabs"><li><a class="current-item">New releases</a></li><li><a>Top of the chart</a></li><li><a>East African</a></li><li><a>West African</a></li><li><a>South African</a></li></ul></nav><div class="videos"><ul data-hook="videos" class="videos-list"></ul></div></div><div class="grid-flex-cell grid-flex-cell-1of3"><blockquote><p>I\'j just saying you can do better</p></blockquote></div></div>';
+        return '<div class="grid-flex-container port"><div class="grid-flex-cell"><nav role="navigation"><ul class="list-unstyled list-inline tabs"><li><a class="current-item">New releases</a></li><li><a>Top of the chart</a></li><li><a>East African</a></li><li><a>West African</a></li><li><a>South African</a></li></ul></nav><div class="videos"><ul data-hook="videos" class="list-unstyled videos-list"></ul></div></div><div class="grid-flex-cell grid-flex-cell-1of3"><blockquote><p>we threw a party yeah we threw a party</p></blockquote></div></div>';
     };
 
     // viewport.jade compiled template
     templatizer["viewport"] = function tmpl_viewport() {
-        return '<body><nav role="navigation" class="top-nav top-nav-dark cf"><div class="toolbar"><div class="logo"><div class="list-unstyled list-inline cf"><li><a href="/">Songs</a></li><li><a href="/videos">Videos</a></li><li><a href="/mixes">Mixes</a></li></div></div><div class="nav"><input type="search" placeholder="search mixes, music and artists" class="search"/></div><div data-hook="session" class="not"><div data-hook="anonymous"><ul class="list-unstyled list-inline cf"><li><a href="/signin">Sign in</a></li><li><a href="/signup">Sign up</a></li></ul></div><div data-hook="authenticated"><ul class="list-unstyled list-inline cf"><li><a class="signout">Sign out</a></li></ul></div></div></div></nav><div><blockquote><p data-hook="token">                 </p></blockquote></div><section data-hook="port"></section></body>';
+        return '<body><nav role="navigation" class="top-nav top-nav-dark cf"><div class="toolbar"><div class="logo"><div class="list-unstyled list-inline cf"><li><a href="/videos">Songs</a></li><li><a href="/videos">Videos</a></li><li><a href="/videos">Mixes</a></li></div></div><div class="nav"><input type="search" placeholder="search mixes, music and artists" class="search"/></div><div data-hook="session" class="not"><div data-hook="anonymous"><ul class="list-unstyled list-inline cf"><li><a href="/signin">Sign in</a></li><li><a href="/signup">Sign up</a></li></ul></div><div data-hook="authenticated"><ul class="list-unstyled list-inline cf"><li><a class="signout">Sign out</a></li></ul></div></div></div></nav><div><blockquote><p data-hook="token">                 </p></blockquote></div><section data-hook="port"></section></body>';
     };
 
     // vu.jade compiled template
