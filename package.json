@@ -6,7 +6,7 @@
   "scripts": {
     "capp": "lsc app.ls -cbo deploy",
     "commit": "git add . && git commit -m '&yet'",
-    "test": "npm run compile && node --harmony deploy/app",
+    "test": "npm run compile && nodemon --harmony deploy/app",
     "compile": "npm run capp && npm run cmod && npm run cmid",
     "cmod": "lsc models/* -cbo deploy/models --nodejs --harmony",
     "stage": "pm2 kill && git pull && npm install && npm run start",
@@ -30,6 +30,7 @@
     "koa-jwt": "^0.1.7",
     "koa-logger": "^1.2.2",
     "koa-router": "^3.8.0",
+    "koa-send": "^1.3.1",
     "koa-static": "^1.4.9",
     "lodash": "^2.4.1",
     "marko": "^1.3.27",
@@ -47,6 +48,7 @@
     "co-supertest": "0.0.7",
     "faker": "^2.1.2",
     "mocha": "^2.1.0",
+    "nodemon": "^1.3.7",
     "offline-docs": "^1.0.4",
     "supertest": "^0.15.0"
   }

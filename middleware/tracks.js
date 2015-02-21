@@ -2,26 +2,30 @@
 var faker;
 faker = require('faker');
 module.exports = function*(next){
-  var tracks, fakeduration, record, i$, i;
+  var tracks, fakeduration, record, i$, i, id;
   tracks = [];
   fakeduration = function(){
     return '0' + faker.finance.mask() % 10 + ':' + faker.finance.mask() % 100;
   };
   record = function(){
     return {
-      id: faker.random.uuid(),
+      id: id,
       duration: fakeduration(),
       title: faker.company.bs(),
       plays: faker.finance.mask(),
       poster: faker.image.image(),
       artist: faker.name.findName(),
       avatarurl: faker.internet.avatar(),
-      streamurl: '/stream',
-      downloadurl: '/download'
+      streamurl: '/stream/' + id + '.mp3',
+      downloadurl: '/download/' + id + '.mp3'
     };
   };
   for (i$ = 1; i$ <= 20; ++i$) {
     i = i$;
+    id = faker.finance.mask() % 10;
+    if (id === 0) {
+      id += 1;
+    }
     tracks.push(record());
   }
   this.body = tracks;
